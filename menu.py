@@ -52,7 +52,7 @@ menu = {
 
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
-
+order={}
 
 # Launch the store and present a greeting to the customer
 print("Welcome to the variety food truck.")
@@ -77,7 +77,7 @@ while place_order:
         menu_items[i] = key
         # Add 1 to the menu item number
         i += 1
-
+   
     # Get the customer's input
     menu_category = input("Type menu number: ")
 
@@ -118,32 +118,36 @@ while place_order:
                     }
                     i += 1
             # 2. Ask customer to input menu item number
+            ordered_item=(input("Please type items number: "))
 
 
             # 3. Check if the customer typed a number
+            if ordered_item.isdigit():
 
                 # Convert the menu selection to an integer
-
+                ordered_item=int(ordered_item)
 
                 # 4. Check if the menu selection is in the menu items
-
+                if ordered_item in menu_items:
                     # Store the item name as a variable
-
+                    ordered_items_name=menu_items[ordered_item]["Item name"]
 
                     # Ask the customer for the quantity of the menu item
-
+                    quantity=input("how many items do you want? ")
 
                     # Check if the quantity is a number, default to 1 if not
-
+                    if quantity.isdigit():
 
                     # Add the item name, price, and quantity to the order list
-
+                        order=[ordered_items_name, quantity,menu_items[ordered_item]["Price"] ]
 
                     # Tell the customer that their input isn't valid
-
+                    else:
+                        print("then input isn't valid")
 
                 # Tell the customer they didn't select a menu option
-
+                else:
+                    print("You didn't select a menu option")
         else:
             # Tell the customer they didn't select a menu option
             print(f"{menu_category} was not a menu option.")
