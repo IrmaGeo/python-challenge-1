@@ -143,17 +143,17 @@ while place_order:
 
                     # Tell the customer that their input isn't valid
                     else:
-                        print("then input isn't valid")
+                        print("Invalid input")
 
                 # Tell the customer they didn't select a menu option
                 else:
-                    print("You didn't select a menu option")
+                    print("No menu option selected")
         else:
             # Tell the customer they didn't select a menu option
             print(f"{menu_category} was not a menu option.")
     else:
         # Tell the customer they didn't select a number
-        print("You didn't select a number.")
+        print("No number selected")
 
     while True:
         # Ask the customer if they would like to order anything else
