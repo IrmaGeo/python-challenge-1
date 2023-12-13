@@ -52,7 +52,7 @@ menu = {
 
 # 1. Set up order list. Order list will store a list of dictionaries for
 # menu item name, item price, and quantity ordered
-order={}
+order=[]
 
 # Launch the store and present a greeting to the customer
 print("Welcome to the variety food truck.")
@@ -139,8 +139,11 @@ while place_order:
                     if quantity.isdigit():
 
                     # Add the item name, price, and quantity to the order list
-                        order=[ordered_items_name, quantity,menu_items[ordered_item]["Price"] ]
-
+                        order.append({
+                             "Item name": ordered_items_name,
+                             "Quantity": quantity,
+                             "Price": menu_items[ordered_item]["Price"]
+                            })
                     # Tell the customer that their input isn't valid
                     else:
                         print("Invalid input")
@@ -162,7 +165,6 @@ while place_order:
         # 5. Check the customer's input
         if keep_ordering.lower()=="y":
                 # Keep ordering
-
                 # Exit the keep ordering question loop
                 break
                 # Complete the order
@@ -182,26 +184,31 @@ while place_order:
 # Print out the customer's order
 print("This is what we are preparing for you.\n")
 
-# Uncomment the following line to check the structure of the order
-#print(order)
-
 print("Item name                 | Price  | Quantity")
 print("--------------------------|--------|----------")
 
 # 6. Loop through the items in the customer's order
+for item in order:
 
     # 7. Store the dictionary items as variables
-
-
+    name=item['Item name']
+    quantity=item['Quantity']
+    price=item['Price']
+    
     # 8. Calculate the number of spaces for formatted printing
-
-
+    name_space_len=24-len(name)
+    price_space_len=5-len(str(price))
+    quantity_space_len=6-len(str(quantity))
     # 9. Create space strings
-
-
+    name_space=' '*name_space_len
+    price_space=' '*price_space_len
+    quantity_space=' '*quantity_space_len
+    print(name_space)
     # 10. Print the item name, price, and quantity
-
-
+    print(f"{name} {name_space} | {price} {price_space} | {quantity} {quantity_space}")
+    
+   
+print("-"*46)
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
