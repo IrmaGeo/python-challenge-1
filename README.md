@@ -10,7 +10,7 @@ The Food Truck Ordering System allows users to choose from a predefined menu. Th
 
 1. ```Run the script.```
 2. ```Follow the prompts``` to select items from the menu and specify quantities.
-3. The system will display the ```selected items```, prices, and quantities**.
+3. The system will display the ```selected items, prices, and quantities```.
 4. Optionally, the customer can ```continue adding items or finalize the order```.
 5. The system calculates the ```total cost of the order``` and displays it.
 
