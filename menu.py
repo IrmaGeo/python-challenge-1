@@ -213,4 +213,4 @@ print("-"*46)
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
 cost_of_order=sum([float(item['Price'])*float(item['Quantity']) for item in order ])
-print(f"Total invoice will be: {cost_of_order:.2f}")
+print(f"Total Invoice: ${cost_of_order:.2f}")
